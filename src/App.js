@@ -13,7 +13,6 @@ import Header from './components/Header';
 import TodoForm from './components/TodoForm';
 import TodoCount from './components/TodoCount';
 import TodoList from './components/TodoList';
-import TodoElement from './components/TodoElement';
 import AboutPage from './pages/AboutPage';
 
 function App() {

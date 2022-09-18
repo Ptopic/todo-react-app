@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    font-size: 10px;
+}
+
+
 body {
+    font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
     background-color: #202142;
     color: #fff;
@@ -46,4 +53,75 @@ h2 {
     font-size: 22px;
     font-weight: 600;
     text-align: center;
+}
+
+/* Todo form */
+.form-title {
+    padding-bottom: 1.5rem;
+}
+
+.input-todo {
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.3rem;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 1.1rem 2rem;
+    border-radius: 1.3rem;
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    color: #333;
+    cursor: auto;
+}
+
+
+.btn-todo {
+    position: absolute;
+    right: 5rem;
+    background: #EE6352;
+    color: white;
+}
+
+
+
+/* Todos count */
+
+.todos-count {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todos-count h4 {
+    font-size: 2.5rem;
+}
+
+/* Todo content */
+
+.btn-edit,
+.btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    float: right;
+}
+
+.btn-edit {
+    right: calc(4rem + 15px);
+}
+
+.todo-text-item {
+    color: white;
+    font-weight: bold;
 }

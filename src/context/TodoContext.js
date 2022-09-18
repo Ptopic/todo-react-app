@@ -9,16 +9,20 @@ export const TodoProvider = ({ children }) => {
 		fetchTodos();
 	}, []);
 
+	useEffect(() => {
+		console.log(todos);
+	}, [todos]);
+
 	const fetchTodos = async () => {
 		const response = await fetch(
 			'http://localhost:5000/todos?_sort=id&_order=desc'
 		);
 		const data = await response.json();
-		console.log(data);
 		setTodos(data);
 	};
 
 	const addTodos = async (newTodos) => {
+		console.log(newTodos);
 		const response = await fetch(`http://localhost:5000/todos`, {
 			method: 'POST',
 			headers: {
@@ -28,12 +32,15 @@ export const TodoProvider = ({ children }) => {
 		});
 
 		const data = await response.json();
+		console.log(data);
 
 		setTodos([data, ...todos]);
 	};
 
-	const deleteTodos = () => {
+	const deleteTodos = async (id) => {
 		if (window.confirm('Do you really want to delete this todo?')) {
+			await fetch(`http://localhost:5000/todos/${id}`, { method: 'DELETE' });
+			setTodos(todos.filter((item) => item.id !== id));
 		}
 	};
 
